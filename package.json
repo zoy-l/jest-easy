@@ -1,0 +1,37 @@
+{
+  "name": "jest-easy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "bin",
+    "lib",
+    "jestArgs"
+  ],
+  "scripts": {
+    "build:watch": "vitx build --watch",
+    "build": "pnpm build:source && vitx build",
+    "build:source": "node build-source",
+    "node": "node ./lib/cli.js tss"
+  },
+  "keywords": [],
+  "author": "zoy(zoy-l@outlook.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/types": "^28.1.1",
+    "@types/node": "^17.0.41",
+    "@vercel/ncc": "^0.34.0",
+    "eslint": "^8.17.0",
+    "eslint-config-iroot": "^1.4.3",
+    "find-up": "5.0.0",
+    "jest": "^28.1.1",
+    "jest-cli": "^28.1.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.3",
+    "vitx": "^2.0.7"
+  },
+  "bin": {
+    "jest-easy": "./bin/jest-easy.js"
+  }
+}

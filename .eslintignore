@@ -1,0 +1,6 @@
+*.d.ts
+lib/*
+debug/*
+packages/**/fixtures/**/*
+packages/**/lib
+packages/bundles/model

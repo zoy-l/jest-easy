@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "extends": ["iroot/typescript"],
+  "rules": {
+    "no-restricted-syntax": "off",
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "no-await-in-loop": "off"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+.cache
+coverage
+actualed
+
+
+/packages/vitx-site/lib
+/packages/bundles/model
+/packages/vitx/lib
