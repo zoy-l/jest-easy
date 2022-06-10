@@ -2,20 +2,19 @@
   "name": "jest-easy",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
   "files": [
     "bin",
-    "lib",
-    "jestArgs"
+    "index.js"
   ],
   "scripts": {
-    "build:watch": "vitx build --watch",
-    "build": "pnpm build:source && vitx build",
-    "build:source": "node build-source",
-    "node": "node ./lib/cli.js tss"
+    "build:watch": " node build --watch",
+    "build": "node build"
   },
-  "keywords": [],
+  "keywords": [
+    "jest",
+    "test"
+  ],
   "author": "zoy(zoy-l@outlook.com)",
   "license": "ISC",
   "devDependencies": {
@@ -28,10 +27,12 @@
     "jest": "^28.1.1",
     "jest-cli": "^28.1.0",
     "prettier": "^2.6.2",
-    "typescript": "^4.7.3",
-    "vitx": "^2.0.7"
+    "typescript": "^4.7.3"
   },
   "bin": {
     "jest-easy": "./bin/jest-easy.js"
+  },
+  "peerDependencies": {
+    "jest": ">=27.0.0"
   }
 }

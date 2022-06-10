@@ -1,15 +1,12 @@
 import type { Config } from '@jest/types'
 import { runCLI } from 'jest'
-
-// @ts-ignore
-import findUp from '../find-up'
+import findUp from 'find-up'
 import assert from 'assert'
 import path from 'path'
 import fs from 'fs'
 
 import defaultConfig from './jestConfig'
-// @ts-ignore
-import jestArgs from '../jestArgs'
+import jestArgs from './jestArgs'
 
 const jestConfig = ['jest.config.js']
 
@@ -71,7 +68,10 @@ export default async function (args: Record<PropertyKey, any>) {
 
   const config = mergeConfig(
     defaultConfig(cwd),
-    isDefault(userJestConfig ? require(userJestConfig) : {}),
+    isDefault(
+      // @ts-ignore
+      userJestConfig ? __non_webpack_require__(userJestConfig) : {}
+    ),
     args
   )
 

@@ -474,17 +474,275 @@ module.exports = require("util");
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__nccwpck_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__nccwpck_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__nccwpck_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__nccwpck_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(776);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+// ESM COMPAT FLAG
+__nccwpck_require__.r(__webpack_exports__);
+
+;// CONCATENATED MODULE: external "jest"
+const external_jest_namespaceObject = require("jest");
+// EXTERNAL MODULE: ./node_modules/.pnpm/find-up@5.0.0/node_modules/find-up/index.js
+var find_up = __nccwpck_require__(776);
+var find_up_default = /*#__PURE__*/__nccwpck_require__.n(find_up);
+;// CONCATENATED MODULE: external "assert"
+const external_assert_namespaceObject = require("assert");
+var external_assert_default = /*#__PURE__*/__nccwpck_require__.n(external_assert_namespaceObject);
+// EXTERNAL MODULE: external "path"
+var external_path_ = __nccwpck_require__(17);
+var external_path_default = /*#__PURE__*/__nccwpck_require__.n(external_path_);
+// EXTERNAL MODULE: external "fs"
+var external_fs_ = __nccwpck_require__(147);
+var external_fs_default = /*#__PURE__*/__nccwpck_require__.n(external_fs_);
+;// CONCATENATED MODULE: ./src/jestConfig.ts
+
+
+function defaultConfig(cwd) {
+    const testMatchTypes = ['spec', 'test'];
+    const hasSrc = external_fs_default().existsSync(external_path_default().join(cwd, 'src'));
+    return {
+        collectCoverageFrom: [
+            hasSrc && 'src/**/*.{js,jsx,ts,tsx}',
+            '!**/node_modules/**',
+            '!**/fixtures/**',
+            '!**/__test__/**',
+            '!**/examples/**',
+            '!**/typings/**',
+            '!**/types/**',
+            '!**/*.d.ts'
+        ].filter(Boolean),
+        testPathIgnorePatterns: ['/node_modules/'],
+        moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
+        testMatch: [`**/?*.(${testMatchTypes.join('|')}).(j|t)s?(x)`],
+        verbose: true
+    };
+}
+
+;// CONCATENATED MODULE: ./src/jestArgs.ts
+/* harmony default export */ const jestArgs = ({
+    all: true,
+    automock: true,
+    bail: true,
+    cache: true,
+    cacheDirectory: true,
+    changedFilesWithAncestor: true,
+    changedSince: true,
+    ci: true,
+    clearCache: true,
+    clearMocks: true,
+    collectCoverage: true,
+    collectCoverageFrom: true,
+    collectCoverageOnlyFrom: true,
+    color: true,
+    colors: true,
+    config: true,
+    coverage: true,
+    coverageDirectory: true,
+    coveragePathIgnorePatterns: true,
+    coverageProvider: true,
+    coverageReporters: true,
+    coverageThreshold: true,
+    debug: true,
+    detectLeaks: true,
+    detectOpenHandles: true,
+    env: true,
+    errorOnDeprecated: true,
+    expand: true,
+    filter: true,
+    findRelatedTests: true,
+    forceExit: true,
+    globalSetup: true,
+    globalTeardown: true,
+    globals: true,
+    haste: true,
+    ignoreProjects: true,
+    init: true,
+    injectGlobals: true,
+    json: true,
+    lastCommit: true,
+    listTests: true,
+    logHeapUsage: true,
+    maxConcurrency: true,
+    maxWorkers: true,
+    moduleDirectories: true,
+    moduleFileExtensions: true,
+    moduleNameMapper: true,
+    modulePathIgnorePatterns: true,
+    modulePaths: true,
+    noStackTrace: true,
+    notify: true,
+    notifyMode: true,
+    onlyChanged: true,
+    onlyFailures: true,
+    outputFile: true,
+    passWithNoTests: true,
+    preset: true,
+    prettierPath: true,
+    projects: true,
+    reporters: true,
+    resetMocks: true,
+    resetModules: true,
+    resolver: true,
+    restoreMocks: true,
+    rootDir: true,
+    roots: true,
+    runInBand: true,
+    runTestsByPath: true,
+    runner: true,
+    selectProjects: true,
+    setupFiles: true,
+    setupFilesAfterEnv: true,
+    shard: true,
+    showConfig: true,
+    silent: true,
+    skipFilter: true,
+    snapshotSerializers: true,
+    testEnvironment: true,
+    testEnvironmentOptions: true,
+    testFailureExitCode: true,
+    testLocationInResults: true,
+    testMatch: true,
+    testNamePattern: true,
+    testPathIgnorePatterns: true,
+    testPathPattern: true,
+    testRegex: true,
+    testResultsProcessor: true,
+    testRunner: true,
+    testSequencer: true,
+    testTimeout: true,
+    transform: true,
+    transformIgnorePatterns: true,
+    unmockedModulePathPatterns: true,
+    updateSnapshot: true,
+    useStderr: true,
+    verbose: true,
+    watch: true,
+    watchAll: true,
+    watchPathIgnorePatterns: true,
+    watchman: true,
+});
+
+;// CONCATENATED MODULE: ./src/jestRun.ts
+
+
+
+
+
+
+
+const jestConfig = ['jest.config.js'];
+function isDefault(obj) {
+    return obj.default ?? obj;
+}
+function mergeConfig(defaultConfig, config, args) {
+    const ret = { ...defaultConfig };
+    if (!config)
+        return;
+    Object.keys(config).forEach((key) => {
+        const val = config[key];
+        ret[key] = typeof val === 'function' ? val(ret[key], args) : val;
+    });
+    return ret;
+}
+function formatArgs(args) {
+    // Generate jest options
+    const argsConfig = Object.keys(jestArgs).reduce((prev, name) => {
+        if (args[name])
+            prev[name] = args[name];
+        // Convert alias args into real one
+        const { alias } = jestArgs[name];
+        if (alias && args[alias])
+            prev[name] = args[alias];
+        return prev;
+    }, {});
+    return argsConfig;
+}
+/* harmony default export */ async function jestRun(args) {
+    process.env.NODE_ENV = 'test';
+    const cwd = args.cwd ?? process.cwd();
+    const userJestConfigFiles = jestConfig.map((configName) => external_path_default().join(cwd, configName));
+    let userJestConfig = userJestConfigFiles.find((configCwd) => external_fs_default().existsSync(configCwd));
+    if (!userJestConfig) {
+        userJestConfig = await find_up_default()(jestConfig[0]);
+    }
+    const config = mergeConfig(defaultConfig(cwd), isDefault(
+    // @ts-ignore
+    userJestConfig ? require(userJestConfig) : {}), args);
+    const argsConfig = formatArgs(args);
+    // prettier-ignore
+    // Run jest
+    const result = await (0,external_jest_namespaceObject.runCLI)({
+        _: args._ || [],
+        $0: args.$0 || '',
+        config: JSON.stringify(config),
+        ...argsConfig,
+    }, [cwd]);
+    external_assert_default()(result.results.success, `Test with jest failed`);
+}
+
+;// CONCATENATED MODULE: ./src/cli.ts
+
+const args = process.argv.slice(2);
+const arg = {};
+const _ = [];
+args.forEach((c) => {
+    if (c.indexOf('-') > -1) {
+        arg[c.replace(/-/g, '')] = true;
+    }
+    else {
+        _.push(c);
+    }
+});
+jestRun({ _, ...arg });
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;
