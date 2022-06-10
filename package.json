@@ -1,14 +1,14 @@
 {
   "name": "jest-easy",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Simple jest-easy is friendlier to monorepo mode support",
   "main": "index.js",
   "files": [
     "bin",
     "index.js"
   ],
   "scripts": {
-    "build:watch": " node build --watch",
+    "build:watch": "node build --watch",
     "build": "node build"
   },
   "keywords": [
