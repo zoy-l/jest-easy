@@ -16,7 +16,7 @@
     "test"
   ],
   "author": "zoy(zoy-l@outlook.com)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@jest/types": "^28.1.1",
     "@types/node": "^17.0.41",
