@@ -57,6 +57,12 @@ function formatArgs(args: Record<PropertyKey, any>) {
 
 export default async function (args: Record<PropertyKey, any>) {
   process.env.NODE_ENV = 'test'
+
+  // Sometimes the jest.config .js will be used for the rest of the plugins,
+  // and the rest of the plugins do not support parameter functioning,
+  // which is used to mark differentiation
+  process.env.JEST_EASY = 'true'
+
   const cwd = args.cwd ?? process.cwd()
 
   const userJestConfigFiles = jestConfig.map((configName) => path.join(cwd, configName))
