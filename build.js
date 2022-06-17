@@ -9,7 +9,11 @@ async function run() {
   const value = require(path.join(require.resolve('jest-cli'), '../cli/args'))
 
   Object.keys(value.options).forEach((key) => {
-    value.options[key] = true
+    if (value.options[key].alias) {
+      value.options[key] = { alias: value.options[key].alias }
+    } else {
+      value.options[key] = {}
+    }
   })
 
   const cwd = path.join(__dirname, './')
